@@ -4,14 +4,14 @@ import subprocess
 from Bio import SeqIO
 import numpy as np
 
-#Parses all results from tblastn and creates a table of e-values with databases as rows and query as columns
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Directory containing the genomic files
-input_directory = "/path/to/your/project/coleoptera_homology_heatmap/downloaded_assemblies/"
+input_directory = os.path.join(BASE_DIR, "downloaded_assemblies")
 # Protein query file
-protein_query = "/path/to/your/project/coleoptera_homology_heatmap/scripts/query_TERTs.fasta"
+protein_query = os.path.join(BASE_DIR, "query_TERTs.fasta")
 # Directory with the tblastn results
-output_directory = "/path/to/your/project/coleoptera_homology_heatmap/tblastn_resultsTERTs/"
+output_directory = os.path.join(BASE_DIR, "tblastn_resultsTERTs")
 
 
 queries = []

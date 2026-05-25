@@ -6,6 +6,8 @@
 
 # Runs tblastn searches of TERT sequence against assemblies downloaded based on GCA list
 
-python3 /path/to/your/project/coleoptera_homology_heatmap/scripts/01_makeblastdb_coleoptera.py
-python3 /path/to/your/project/coleoptera_homology_heatmap/scripts/02_tblastn_coleoptera.py
-python3 /path/to/your/project/coleoptera_homology_heatmap/scripts/03_parse_blast_results.py
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+python3 "$BASE_DIR/01_makeblastdb_coleoptera.py"
+python3 "$BASE_DIR/02_tblastn.py"
+python3 "$BASE_DIR/03_parse_blast_results.py"

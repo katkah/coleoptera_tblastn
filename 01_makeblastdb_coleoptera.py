@@ -1,12 +1,13 @@
 import os
 import subprocess
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Directory containing the genomic files
-input_directory = "/path/to/your/project/coleoptera_homology_heatmap/downloaded_assemblies/"
+input_directory = os.path.join(BASE_DIR, "downloaded_assemblies")
 
 # Directory to save the BLAST databases
-db_directory = "/path/to/your/project/coleoptera_homology_heatmap/blast_database/"
+db_directory = os.path.join(BASE_DIR, "blast_database")
 
 # Ensure the database directory exists
 os.makedirs(db_directory, exist_ok=True)

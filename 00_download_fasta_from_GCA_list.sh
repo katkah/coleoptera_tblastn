@@ -6,27 +6,9 @@
 # It requieres python3.6 to be installed and loaded as a module
 
 
-##########################################################################################
-# SET VARIABLES IN THIS SECTION 
-
-# Set the directory for outputs -> the directory is going to be created in the next step
-RESULT_DIR="/path/to/your/project/coleoptera_homology_heatmap/"
-
-# Set the input csv file
-# One "GenBank Assembly ID" number per line, e.g.:
-#GCA_024364675.1
-#GCA_024364675.1
-#GCA_917563875.2
-#GCA_939628115.1
-#GCA_947389935.1
-#GCA_921294245.1
-#GCA_917563865.1
-#GCA_031307605.1
-
-INPUT_LIST="/path/to/your/project/coleoptera_homology_heatmap/GCA_list.txt"
-
-
-############################################################################################
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RESULT_DIR="$BASE_DIR"
+INPUT_LIST="$BASE_DIR/GCA_list.txt"
 
 # Create the directory for outputs
 mkdir -p $RESULT_DIR

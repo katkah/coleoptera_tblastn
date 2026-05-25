@@ -3,21 +3,9 @@
 # The script uses edirect utilities to create taxonomy.csv (info about family, taxon)based on a list of GCA numbers
 # It requieres edirect to be installed and loaded as a module
 # It requieres python3.6 to be installed and loaded as a module
-##########################################################################################
-# SET VARIABLES IN THIS SECTION 
-
-# Set the directory for outputs -> the directory is going to be created in the next step
-# The outputs are: downloaded files and taxonomy.csv
-RESULT_DIR="/path/to/your/project/coleoptera_homology_heatmap"
-
-#Set the input csv file. It should contain one "GenBank Assembly ID" number per line, e.g.:
-#GCA_024364675.1
-#GCA_024364675.1
-#GCA_917563875.2
-
-INPUT_LIST="/path/to/your/project/coleoptera_homology_heatmap/GCA_list.txt"
-
-############################################################################################
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+RESULT_DIR="$BASE_DIR"
+INPUT_LIST="$BASE_DIR/GCA_list.txt"
 
 # Create the directory for outputs
 mkdir -p $RESULT_DIR
